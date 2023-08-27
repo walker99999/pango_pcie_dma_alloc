@@ -1,0 +1,155 @@
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do pango_pcie_top_sim.do 
+# Reading D:\EDA\10.1a\win32/../modelsim.ini
+# "work" maps to directory ./work. (Default mapping)
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module ipm2l_sdpram_v1_0_rcv_data_ram
+# -- Compiling module ipm2l_sdpram_v1_0_rcv_header_ram
+# -- Compiling module ipm2l_spram_v1_0_retry_data_ram
+# -- Compiling module rcv_data_ram
+# -- Compiling module rcv_header_ram
+# -- Compiling module retry_data_ram
+# -- Compiling module ipm2l_hsstlp_fifo_clr_v1_3
+# -- Compiling module ipm2l_hsstlp_pll_rst_fsm_v1_0
+# -- Compiling module ipm2l_hsstlp_rst_debounce_v1_0
+# -- Compiling module ipm2l_hsstlp_rst_pll_v1_0
+# -- Compiling module ipm2l_hsstlp_rst_rx_v1_4
+# -- Compiling module ipm2l_hsstlp_rst_sync_v1_0
+# -- Compiling module ipm2l_hsstlp_rst_tx_v1_4
+# -- Compiling module ipm2l_hsstlp_rst_v1_4
+# -- Compiling module ipm2l_hsstlp_rst_wtchdg_v1_0
+# -- Compiling module ipm2l_hsstlp_rxlane_rst_fsm_v1_4
+# -- Compiling module ipm2l_hsstlp_txlane_rst_fsm_v1_4
+# -- Compiling module ipm2l_hsstlp_apb_bridge_v1_2
+# -- Compiling module ipm2l_hsstlp_wrapper_v1_4
+# -- Compiling module ipm2l_pcie_hsstlp_x4_top
+# -- Compiling module ipm2l_pcie_hsstlp_x2_top
+# -- Compiling module ipm2l_pcie_hsstlp_x1_top
+# -- Compiling module hsst_rst_cross_sync_v1_0
+# -- Compiling module hsst_rst_debounce_v1_0
+# -- Compiling module hsst_rst_sync_v1_0
+# -- Compiling module hsst_rst_wtchdg_v1_0
+# -- Compiling module hsstl_phy_mac_rdata_proc
+# -- Compiling module hsstl_rst4mcrsw_rx_init_v1_0
+# -- Compiling module hsstl_rst4mcrsw_rx_rst_fsm_v1_0
+# -- Compiling module hsstl_rst4mcrsw_rx_rst_initfsm_v1_0
+# -- Compiling module hsstl_rst4mcrsw_rx_v1_0
+# -- Compiling module hsstl_rst4mcrsw_tx_rst_fsm_v1_1
+# -- Compiling module hsstl_rst4mcrsw_tx_v1_0
+# -- Compiling module hsstl_rst4mcrsw_v1_0
+# -- Compiling module ips_hsst_rst_sync_v1_0
+# -- Compiling module ips2l_pcie_hard_ctrl_v1_2b
+# -- Compiling module ips2l_pcie_apb_cross_v1_0
+# -- Compiling module ips2l_pcie_apb_mux_v1_0
+# -- Compiling module ips2l_pcie_apb2dbi_v1_1
+# -- Compiling module ips2l_pcie_soft_phy_v1_2
+# -- Compiling module ips2l_pcie_cfg_init_v1_2b
+# -- Compiling module ips2l_pcie_top_v1_2b
+# -- Compiling module ips2l_pcie_pll_v1_0
+# -- Compiling module ips2l_pcie_seio_intf_v1_2
+# -- Compiling module pcie
+# -- Compiling module pango_pcie_top_tb
+# -- Compiling module pango_pcie_top
+# -- Compiling module pango_pcie_top_sim
+# -- Compiling module ips2l_pcie_wrap_v1_2b_sim
+# -- Compiling module pgr_apb_ctr_32bit
+# -- Compiling module pgr_apb_mif_32bit
+# -- Compiling module pgr_clk_gen_32bit
+# -- Compiling module pgr_cmd_parser_32bit
+# -- Compiling module pgr_fifo_top_32bit
+# -- Compiling module pgr_uart2apb_top_32bit
+# -- Compiling module pgr_uart_rx_32bit
+# -- Compiling module pgr_uart_top_32bit
+# -- Compiling module pgr_uart_tx_32bit
+# -- Compiling module pgm_distributed_fifo_ctr_v1_0
+# -- Compiling module pgm_distributed_fifo_v1_1
+# -- Compiling module pgm_distributed_sdpram_v1_1
+# -- Compiling module pgr_prefetch_fifo
+# -- Compiling module pcie_cfg_ctrl
+# -- Compiling module pcie_cfg_ctrl_apb
+# -- Compiling module pcie_cfg_trans
+# -- Compiling module ips2l_pcie_dma
+# -- Compiling module ips2l_expd_apb_mux
+# -- Compiling module ips2l_pcie_dma_controller
+# -- Compiling module ips2l_pcie_dma_cpld_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_mrd_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_mwr_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_rx_cpld_wr_ctrl
+# -- Compiling module ips2l_pcie_dma_rx_mwr_wr_ctrl
+# -- Compiling module ips2l_pcie_dma_wr_ctrl
+# -- Compiling module ips2l_pcie_dma_tlp_rcv
+# -- Compiling module ips2l_pcie_dma_tlp_tx_mux
+# -- Compiling module ips2l_pcie_dma_rx_top
+# -- Compiling module ips2l_pcie_dma_tx_top
+# -- Compiling module ips2l_pcie_dma_tx_cpld_rd_ctrl
+# -- Compiling module ips2l_pcie_dma_tx_mwr_rd_ctrl
+# -- Compiling module ips2l_pcie_dma_rd_ctrl
+# -- Compiling module pgs_pciex4_prefetch_fifo_v1_2
+# -- Compiling module pgs_pciex4_fifo_v1_2
+# -- Compiling module pgs_pciex4_fifo_ctrl
+# -- Compiling module ipm_distributed_sdpram_v1_2_distributed_fifo
+# -- Compiling module ipm_distributed_sdpram_v1_2
+# -- Compiling module ips2l_pcie_dma_ram
+# -- Compiling module ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# -- Scanning library file '+define+IPS2L_PCIE_SPEEDUP_SIM'
+# 
+# Referenced (but uncompiled) modules or primitives:
+# 	GTP_DRM18K_E1
+# 	GTP_HSSTLP_PLL
+# 	GTP_HSSTLP_LANE
+# 	GTP_PCIEGEN2
+# 	GTP_CLKBUFGMUX
+# 	GTP_CLKBUFG
+# 	GTP_GPLL
+# 	GTP_GRS
+# 	pgm_fifo_v1_2
+# 	pgs_pciex4_reg_fifo2_v1_2
+# 
+# Top level modules:
+# 	pango_pcie_top_tb
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# 
+# Top level modules:
+# 	--none--
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# ** Warning: power_management/DWC_pcie_pm_pkg.svh(25): in protected region
+# ** Warning: power_management/DWC_pcie_pm_pkg.svh(25): in protected region
+# ** Warning: power_management/DWC_pcie_pm_pkg.svh(25): in protected region
+# ** Warning: power_management/DWC_pcie_pm_pkg.svh(25): in protected region
+# -- Compiling module GTP_DRM18K_E1
+# -- Compiling module GTP_CLKBUFG
+# -- Compiling module GTP_CLKBUFGMUX
+# -- Compiling module GTP_GPLL
+# -- Compiling module GTP_IOBUF
+# -- Compiling module GTP_HSSTLP_LANE
+# -- Compiling module GTP_HSSTLP_PLL
+# -- Compiling module GTP_PCIEGEN2
+# -- Compiling module GTP_GRS
+# 
+# Top level modules:
+# 	GTP_DRM18K_E1
+# 	GTP_CLKBUFG
+# 	GTP_CLKBUFGMUX
+# 	GTP_GPLL
+# 	GTP_IOBUF
+# 	GTP_HSSTLP_LANE
+# 	GTP_HSSTLP_PLL
+# 	GTP_PCIEGEN2
+# 	GTP_GRS

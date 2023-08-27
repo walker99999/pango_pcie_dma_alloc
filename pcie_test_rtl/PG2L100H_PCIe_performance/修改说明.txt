@@ -1,0 +1,30 @@
+
+PDS版本:Pango Design Suite 2021.1-SP6.2
+
+PGL50H -> PG2L100H代码修改过程：
+1.生成PG2L100H PCIe IP example（EP工程，使能credit端口）。
+2.在 PG2L100H PCIe IP example的pango_pcie_top.v 定义 wire  [132:0] debug_info_mux;
+  并把 debug_info_mux 连接到 u_ips2l_pcie_dma 和 u_ips2l_pcie_wrap。
+  把 u_ips2l_pcie_wrap的端口dyn_debug_info_sel 赋值为 2。
+3.把 PGL50H 的 ipsl_pcie_dma.v 文件名和 module 名改为 ips2l_pcie_dma 并替换掉 PG2L100H PCIe IP example 同名文件。
+4.把 PGL50H 的 pcie_dma_ctrl 文件夹的 ipsl_pcie_dma_XXX.v 共 14 个文件复制到 PG2L100H PCIe IP example 同名文件夹内，
+  并把这些文件添加到 PG2L100H PCIe IP example 工程（工程编译）和添加到  pango_pcie_top_filelist.f （仿真）。
+5.修改 ips2l_pcie_wrap_v1_2c_sim.v 的 localparam   BAR0_MASK  = 31'h7fff_ffff  ; //@IPC string   //31'hfff   
+6.修改 pango_pcie_top_tb.v 
+  （1）屏蔽掉 DMA读写测试，只留下 //DMA 32 DW 下面的（因为DMA测试固定包长为 128 bytes），并修改为：
+       //rc_cfg_ep_tx(32'h0000_001f,32'h0000_0000);  //mrd    
+       //rc_cfg_ep_tx(32'h0100_001f,32'h0000_0000);  //mwr       (bar1+0x100)写32'h0100_001f, (bar1+110)写32'h0000_0200   
+         rc_cfg_ep_tx(32'h0200_001f,32'h0000_0000);  //mwr & mrd ， rc_cfg_ep_tx(32'h0200_001f,32'h0000_0200);  
+  （2）屏蔽掉 PIO 读写测试,只留下 //PIO 1 DW，并修改为：
+        rc_mwr_tx(8'h00,32'h0000_2000);
+        //rc_tx_mrd
+        rc_mrd_tx(8'h00,32'h0000_2000);  //read bar0 offset=0x00: bit[0]=0:write test finish; bit[1]=0:read test finish           
+        rc_mrd_tx(8'h00,32'h0000_2004);  //read bar0 offset=0x04: bit[31:0]:wirte time count (Gen1: 16 ns,Gen2:8 ns)                
+        rc_mrd_tx(8'h00,32'h0000_2008);  //regd bar0 offset=0x08: bit[31:0]:read  time count (Gen1: 16 ns,Gen2:8 ns)                
+        rc_mrd_tx(8'h00,32'h0000_200C);  //regd bar0 offset=0x0c: bit[31:0]:read  data error count                                  
+        rc_mrd_tx(8'h00,32'h0000_2010);  //regd bar0 offset=0x10: bit[31:0]:wr/rd data count (16*bytes)                             
+        rc_mrd_tx(8'h00,32'h0000_2014);          
+  （3）修改一下语句，u_ips2l_pcie_dma_XXX 改为 u_ipsl_pcie_dma_XXX
+      pango_pcie_top_tb.u_pango_pcie_top_ep.u_ips2l_pcie_dma.u_ipsl_pcie_dma_tx_top.u_ipsl_pcie_dma_mwr_tx_ctrl.tlp_tx_sum,  
+      pango_pcie_top_tb.u_pango_pcie_top_ep.u_ips2l_pcie_dma.u_ipsl_pcie_dma_tx_top.u_ipsl_pcie_dma_mrd_tx_ctrl.tlp_tx_sum,  
+      pango_pcie_top_tb.u_pango_pcie_top_ep.u_ips2l_pcie_dma.u_ipsl_pcie_dma_rx_top.u_ipsl_pcie_dma_tlp_rcv.tlp_rx_sum);     

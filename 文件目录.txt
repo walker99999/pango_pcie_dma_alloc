@@ -1,0 +1,26 @@
+﻿
+
+pcie_test参考设计目录结构图：
+
+├─doc                            			//应用指南文档
+├─app_pcie                 					//应用程序文件夹  
+│ ├─includes								//*.h头文件目录
+│ ├─├─color.h								//打印信息颜色定义
+│ │ ├─config_gui.h							//gui配置相关
+│ ├─sources									//代码源文件目录
+│ │ ├─main.c								//主函数
+│ ├─Makefile 								//Makefile编译文件
+│ ├─test.txt 								//测试文件
+├─driver                      	  			//JTAG驱动目录
+│ ├─id_config.h								//PCIe ID定义头文件
+│ ├─Makefile								//驱动编译文件
+│ ├─pang_pci_driver.c						//驱动源文件
+│ ├─pang_pci_driver.h						//驱动头文件
+│ ├─pci_test_rtl							//PCIe测试rtl工程
+│ │ ├─PG2L100H_PCIe_DMA						//DMA Auto、DMA Manual、PIO Test相关测试硬件工程
+│ │ ├─PG2L100H_PCIe_performance				//PCIe DMA性能测试硬件工程
+│ │ ├─PG2L100H_PCIe_Tandem					//PCIe Tandem加载硬件层
+│ ├─run.sh									//PCIe测试平台运行脚本
+
+
+
